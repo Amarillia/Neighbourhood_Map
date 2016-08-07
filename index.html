@@ -1,0 +1,82 @@
+<!--    
+   The script loads the API from the specified URL. 
+	The callback parameter executes the initMap function after the API is completely loaded. 
+	The async attribute allows the browser to continue rendering the rest of your page while the API loads. 
+	The key parameter contains your API key.-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple Map</title>
+		<meta name="viewport" content="initial-scale=1.0">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-dark bg-faded">
+			<div class="container">
+			<div class="navbar navbar-fixed-top navbar-dark bg-inverse">
+				<h1>EXPLORE YOUR NEIGHBOURHOOD</h1>
+				<ul class="nav navbar-nav">
+					<li class="nav-item active">
+					<a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="#">RESTURANTS</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="#">BANKS</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="#">ABOUT</a>
+					</li>
+				</ul>
+			</div>
+			</div>
+		</nav>
+		<header>
+		<h1>NEIGHBOURHOOD MAP</h1>
+		</header>
+
+		<input id="pac-input" class="controls" type="text" size="50"
+		placeholder="ENTER A LOCATION">
+
+
+		<button id="trafficToggle">TOGGLE TRAFFIC LAYER</button>
+
+		<div id="map"></div>
+		<div id="pano"></div>
+
+		<div class="footer" id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+					<h3>CONTACT</h3>
+						<ul>
+							<li>
+								<div class="input-append newsletter-box text-center">
+								<input type="text" class="full text-center" placeholder="EMAIL ">
+								<button class="btn  bg-gray" type="button"> SUBMIT </button>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--/.row--> 
+			</div>
+			<!--/.container--> 
+		</div>
+		<!--/.footer-->
+
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjo4bDlh2pdMwbz3rCXmgdwooAyyiHawc&callback=initMap"
+		async defer></script>
+		<script src="js/main.js" async defer></script>
+
+		<script src="js/Library/knockout-3.2.0.js" async defer></script>
+		<script src="js/Library/jQuery.js" async defer></script>
+
+	</body>
+</html>
