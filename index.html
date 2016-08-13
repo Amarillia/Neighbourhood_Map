@@ -24,12 +24,6 @@
 					<a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-					<a class="nav-link" href="#">RESTURANTS</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="#">BANKS</a>
-					</li>
-					<li class="nav-item">
 					<a class="nav-link" href="#">ABOUT</a>
 					</li>
 				</ul>
@@ -40,10 +34,14 @@
 		<h1>NEIGHBOURHOOD MAP</h1>
 		</header>
 
-		<input id="pac-input" class="controls" type="text" size="50"
-		placeholder="ENTER A LOCATION">
+		<div id="searchPanel">
+      	<input id="address" type="textbox" value="" placeholder = "TYPE YOUR LOCATION">
+      	<input id="submit" type="button" value="SEARCH">
+      	<input id="submitNearby" type="button" value="SHOW NEARBY PLACES">
 
+    	</div>
 
+		<!--<button id="searchNearby">SEARCH NEARBY</button>-->
 		<button id="trafficToggle">TOGGLE TRAFFIC LAYER</button>
 
 		<div id="map"></div>
@@ -71,7 +69,7 @@
 		<!--/.footer-->
 
 
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjo4bDlh2pdMwbz3rCXmgdwooAyyiHawc&callback=initMap"
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjo4bDlh2pdMwbz3rCXmgdwooAyyiHawc&libraries=places&callback=initMap"
 		async defer></script>
 		<script src="js/main.js" async defer></script>
 
