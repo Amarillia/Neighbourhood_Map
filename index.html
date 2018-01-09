@@ -43,7 +43,7 @@
 
 		<!--<button id="searchNearby">SEARCH NEARBY</button>-->
 		<button id="trafficToggle">TOGGLE TRAFFIC LAYER</button>
-
+		<button id="toggle-drawing" class="btn bg-gray" type="button">DRAWING TOOLS</button></br>
 		<div id="map"></div>
 		<div id="pano"></div>
 
@@ -69,8 +69,8 @@
 		<!--/.footer-->
 
 
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjo4bDlh2pdMwbz3rCXmgdwooAyyiHawc&libraries=places&callback=initMap"
-		async defer></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&key=AIzaSyCjo4bDlh2pdMwbz3rCXmgdwooAyyiHawc&v=3&callback=initMap">
+   		</script>
 		<script src="js/main.js" async defer></script>
 
 		<script src="js/Library/knockout-3.2.0.js" async defer></script>
