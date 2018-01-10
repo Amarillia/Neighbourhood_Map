@@ -1,13 +1,7 @@
-<!--    
-   The script loads the API from the specified URL. 
-	The callback parameter executes the initMap function after the API is completely loaded. 
-	The async attribute allows the browser to continue rendering the rest of your page while the API loads. 
-	The key parameter contains your API key.-->
-
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Simple Map</title>
+		<title>Neighbourhood Map</title>
 		<meta name="viewport" content="initial-scale=1.0">
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,33 +11,47 @@
 	<body>
 		<nav class="navbar navbar-dark bg-faded">
 			<div class="container">
-			<div class="navbar navbar-fixed-top navbar-dark bg-inverse">
-				<h1>EXPLORE YOUR NEIGHBOURHOOD</h1>
-				<ul class="nav navbar-nav">
-					<li class="nav-item active">
-					<a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="#">ABOUT</a>
-					</li>
-				</ul>
-			</div>
+				<div class="navbar navbar-fixed-top navbar-dark bg-inverse">
+					<h1>EXPLORE YOUR NEIGHBOURHOOD</h1>
+					<ul class="nav navbar-nav">
+						<li class="nav-item active">
+						<a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+						<a class="nav-link" href="#">ABOUT</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</nav>
 		<header>
 		<h1>NEIGHBOURHOOD MAP</h1>
 		</header>
+		<div class="container">
+			      <div class="options-box">
+				<h1>Find Your New NYC Home</h1>
+				<div>
+				  <input id="show-listings" type="button" value="Show Listings">
+				  <input id="hide-listings" type="button" value="Hide Listings">
+				  <hr>
+				  <span class="text"> Draw a shape to search within it for homes!</span>
+				  <input id="toggle-drawing"  type="button" value="Drawing Tools">
+				</div>
+			      </div>
+		</div>
 
-		<div id="searchPanel">
-      	<input id="address" type="textbox" value="" placeholder = "TYPE YOUR LOCATION">
-      	<input id="submit" type="button" value="SEARCH">
-      	<input id="submitNearby" type="button" value="SHOW NEARBY PLACES">
+		<div>
+			<button id="trafficToggle" class="btn bg-gray" type="button">TOGGLE TRAFFIC LAYER</button>
+		</div>
 
-    	</div>
-
-		<!--<button id="searchNearby">SEARCH NEARBY</button>-->
-		<button id="trafficToggle">TOGGLE TRAFFIC LAYER</button>
-		<button id="toggle-drawing" class="btn bg-gray" type="button">DRAWING TOOLS</button></br>
+		<div id="floating-panel">
+		      <input id="address" type="textbox" VALUE="Red Fort, Delhi">
+		      <input id="submit" type="button" value="Geocode">
+		      <div id="firstComponent">
+		      </div>
+		      <div id="secondComponent">
+		      </div>
+		</div>
 		<div id="map"></div>
 		<div id="pano"></div>
 
@@ -68,15 +76,9 @@
 		</div>
 		<!--/.footer-->
 
-
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjo4bDlh2pdMwbz3rCXmgdwooAyyiHawc&libraries=drawing&callback=initMap"
-         async defer></script>
-
-
-		<script src="js/main.js" async defer></script>
-
-		<script src="js/Library/knockout-3.2.0.js" async defer></script>
-		<script src="js/Library/jQuery.js" async defer></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&key=AIzaSyCjo4bDlh2pdMwbz3rCXmgdwooAyyiHawc&v=3&callback=initMap"></script>
+	<script src="js/main.js" async defer></script>
+	<script src="js/Library/jQuery.js" async defer></script>
 
 	</body>
 </html>
